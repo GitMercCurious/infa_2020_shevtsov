@@ -25,7 +25,7 @@ def setup_background(surface, color):
     rect(surface, color, (0, 0, 800, 600))
 
 
-def back_leg(surface, x, y, size):
+def back_leg(surface, x, y, size, stand):
     """
     рисуем заднюю лапку
     """
@@ -79,6 +79,7 @@ def body(surface, x, y, size, stand):
     """
     рисуем тельце
     """
+
     body_pos = (x + int(20 * size), y + int(size * 30), int(size * 300), int(size * 150))
     ellipse(surface, WHITE, body_pos)
 
@@ -97,11 +98,11 @@ def panda(surface, x, y, size, touch, stand):
 
     body(screen, x, y, size, stand)
 
-    #front_legs(surface, x, y, size, touch)
+    front_legs(surface, x, y, size, touch)
 
-    #back_leg(surface, x, y, size)
+    back_leg(surface, x, y, size, stand)
 
-    #head(surface, x, y, size, touch)
+    head(surface, x, y, size, touch)
 
 
 def left_branches(surface, x, y, size, color):
@@ -203,10 +204,10 @@ def draw():
     palm(screen, 480, 350, 0.75, GREEN, FRUIT_COLORS)
     palm(screen, 640, 350, 0.56, GREEN, FRUIT_COLORS)
 
-    #panda(screen, 500, 400, 0.8, False, False)
+    panda(screen, 500, 400, 0.8, False, False)
 
-    #panda(screen, 150, 300, 0.25, False, False)
-    #panda(screen, 160, 270, 0.15, True, False)
+    panda(screen, 150, 300, 0.25, False, False)
+    panda(screen, 160, 270, 0.15, True, False)
 
     panda(screen, 300, 500, 0.3, False, True)
 
